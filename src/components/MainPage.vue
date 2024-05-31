@@ -1,50 +1,42 @@
 <template>
   <div class="Main">
-    <div class="Title"><h1 id="satisfy-regular">HUNCHO</h1></div>
-    
-    <ul>
-      <li><a href="">Merch</a></li>
-      <li><a href="">About Me</a></li>
-    </ul>
-    
+
+    <HeaderPage/>
+
+    <h3 class="PriceNotice">$2 for each song!!!</h3>
     <SongViewer :imgPath="require('@/assets/Shooting Stars/Shooting Stars Cover.png')" 
     :audioPath="require('@/assets/Shooting Stars/Shooting Stars OfficialSongEverth.Del..wav')"/>
 
     <SongViewer :imgPath="require('@/assets/Letter to the past/cover photo.jpg')" 
     :audioPath="require('@/assets/Letter to the past/Letter to the past w_hu.mp3')"/>
-          
-    <div><p> <a href="">Subscribe</a> to Huncho's newsletter</p></div>
+
+    <SongViewer :imgPath="require('@/assets/Money Reels/Money Reels Official Cover.png')" 
+    :audioPath="require('@/assets/Money Reels/Money Reel4 redone3.mp3')"/>     
     
+    <FooterPage/>    
+
   </div>
 </template>
 
 <script>
 import SongViewer from './SongViewer.vue';
+import HeaderPage from './HeaderPage.vue';
+import FooterPage from './FooterPage.vue';
 
 export default {
   name: 'MainPage',
   components: {
-    SongViewer
+    SongViewer,
+    HeaderPage,
+    FooterPage
   }
 }
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.Title {
-  background-color: brown;
-  padding: 1px;
+.PriceNotice {
+  
 }
 
 .Main {
@@ -53,9 +45,5 @@ li {
   color: white;
 }
 
-#satisfy-regular {
-  font-family: "Satisfy", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+
 </style>

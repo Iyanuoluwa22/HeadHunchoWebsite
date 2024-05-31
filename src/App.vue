@@ -1,6 +1,4 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/HHLogo.jpeg">
-  <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <MainPage/>
 </template>
 
