@@ -7,7 +7,11 @@
       <li><a href="">About Me</a></li>
     </ul>
     
-    <SongViewer :imgPath="require('@/assets/Shooting Stars/Shooting Stars Cover.png')" class="SongImage"/>
+    <SongViewer :imgPath="require('@/assets/Shooting Stars/Shooting Stars Cover.png')" 
+    :audioPath="require('@/assets/Shooting Stars/Shooting Stars OfficialSongEverth.Del..wav')"/>
+
+    <SongViewer :imgPath="require('@/assets/Letter to the past/cover photo.jpg')" 
+    :audioPath="require('@/assets/Letter to the past/Letter to the past w_hu.mp3')"/>
           
     <div><p> <a href="">Subscribe</a> to Huncho's newsletter</p></div>
     
