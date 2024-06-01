@@ -30,7 +30,7 @@
     </tr>
   </table>
 
-  <button>Add to Cart</button>
+  <button class="add-song">+</button>
 </template>
 
 <script>
@@ -123,6 +123,8 @@ export default {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  background-image: url('../assets/Images/Galaxy.jpeg');
+  border-radius: 20px;
 }
 
 .track-info-table td {
@@ -131,7 +133,9 @@ export default {
   text-align: left;
 }
 
-.track-info-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+.add-song {
+  background-color: gold;
+  color: black;
+  border-radius: 10px;
 }
 </style>
