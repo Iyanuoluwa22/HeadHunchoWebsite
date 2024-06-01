@@ -5,13 +5,16 @@
 
     <h3 class="PriceNotice">$2 for each song!!!</h3>
     <SongViewer :imgPath="require('@/assets/Shooting Stars/Shooting Stars Cover.png')" 
-    :audioPath="require('@/assets/Shooting Stars/Shooting Stars OfficialSongEverth.Del..wav')"/>
+    :audioPath="require('@/assets/Shooting Stars/Shooting Stars OfficialSongEverth.Del..wav')"
+    trackName = "Shooting Stars"/>
 
     <SongViewer :imgPath="require('@/assets/Letter to the past/cover photo.jpg')" 
-    :audioPath="require('@/assets/Letter to the past/Letter to the past w_hu.mp3')"/>
+    :audioPath="require('@/assets/Letter to the past/Letter to the past w_hu.mp3')"
+    trackName = "Letter to the Past"/>
 
     <SongViewer :imgPath="require('@/assets/Money Reels/Money Reels Official Cover.png')" 
-    :audioPath="require('@/assets/Money Reels/Money Reel4 redone3.mp3')"/>     
+    :audioPath="require('@/assets/Money Reels/Money Reel4 redone3.mp3')"
+    trackName = "Money Reels"/>     
     
     <FooterPage/>    
 
