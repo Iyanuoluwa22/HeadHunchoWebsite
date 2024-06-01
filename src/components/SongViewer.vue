@@ -1,36 +1,50 @@
 <template>
-  <div>
-    <img 
-      :src="imgPath" 
-      alt="Image Here" 
-      class="ImageSize" 
-      @mouseover="darkenImage" 
-      @mouseout="resetImage" 
-      @click="toggleClick"
-    >
-    <audio ref="audio" :src="audioPath" @loadedmetadata="getAudioDuration"></audio>
-  </div>
+  <div class="row song-row">
 
-  <table class="track-info-table">
-    <tr>
-      <td>Track Name</td>
-      <td>{{ trackName }}</td>
-    </tr>
-    <tr>
-      <td>Artist</td>
-      <td>{{ mainArtistName }}</td>
-    </tr>
-    <tr>
-      <td>Featuring</td>
-      <td>{{ featureArtistName.join(', ') }}</td>
-    </tr>
-    <tr>
-      <td>Song Length</td>
-      <td>{{ audioDuration }}</td>
-    </tr>
-  </table>
+    <div class="col img-max-height">
+        <img 
+              :src="imgPath" 
+              alt="Image Here" 
+              class="ImageSize" 
+              @mouseover="darkenImage" 
+              @mouseout="resetImage" 
+              @click="toggleClick"
+            >
+        <audio ref="audio" :src="audioPath" @loadedmetadata="getAudioDuration"></audio>
+    </div>
+   
 
-  <button class="add-song">+</button>
+    <div class="col">
+      <table class="track-info-table">
+        <tr>
+          <td>Track Name</td>
+          <td>{{ trackName }}</td>
+        </tr>
+        <tr>
+          <td>Artist</td>
+          <td>{{ mainArtistName }}</td>
+        </tr>
+        <tr>
+          <td>Featuring</td>
+          <td>{{ featureArtistName.join(', ') }}</td>
+        </tr>
+        <tr>
+          <td>Song Length</td>
+          <td>{{ audioDuration }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col">
+
+    </div>
+  
+    <div class="col add-song">
+      <button>+</button>
+    </div>
+
+
+</div>
 </template>
 
 <script>
@@ -113,29 +127,51 @@ export default {
 </script>
 
 <style scoped>
-.ImageSize {
+.img-max-height {
   max-height: 200px;
-  width: auto;
+  width: 100%; /* Ensures the container takes full width */
+  overflow: hidden; /* Ensures no overflow occurs */
+  position: relative; /* Allows for positioning of the image within the container */
+}
+
+.ImageSize {
+  max-height: 100%; /* Ensures the image respects the container's max height */
+  width: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures the image is fully visible without cropping */
   transition: filter 0.3s ease;
+  display: block; /* Ensures the image behaves as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
 }
 
 .track-info-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  background-image: url('../assets/Images/Galaxy.jpeg');
+  background-image: url('../assets/Images/Galaxy.gif');
   border-radius: 20px;
 }
 
 .track-info-table td {
   border: 1px solid #ccc;
   padding: 8px;
-  text-align: left;
+  text-align: center;
+  font-size-adjust: initial;
 }
 
 .add-song {
-  background-color: gold;
-  color: black;
-  border-radius: 10px;
+  display: flex;             /* Enables flexbox layout */
+  justify-content: center;   /* Centers content horizontally */
+  align-items: center;       /* Centers content vertically */
 }
+
+.add-song button {
+  background-color: gold;
+  border-radius: 10px;
+  color: black;
+}
+
+.song-row{
+  margin: 20px;
+}
+
 </style>
