@@ -17,30 +17,58 @@
     <div class="col">
       <table class="track-info-table">
         <tr>
-          <td>Track Name</td>
+          <td class="track-info">Track Name</td>
           <td>{{ trackName }}</td>
         </tr>
         <tr>
-          <td>Artist</td>
+          <td class="track-info">Artist</td>
           <td>{{ mainArtistName }}</td>
         </tr>
         <tr>
-          <td>Featuring</td>
+          <td class="track-info">Featuring</td>
           <td>{{ featureArtistName.join(', ') }}</td>
         </tr>
         <tr>
-          <td>Song Length</td>
+          <td class="track-info">Song Length</td>
           <td>{{ audioDuration }}</td>
+        </tr>
+        <tr>
+          <td class="track-info">Release Date</td>
+          <td>-</td>
         </tr>
       </table>
     </div>
 
-    <div class="col">
+    <div class="col song-link-container">
+        <div class="row">
+          <a href=""><img src="../assets/Images/streaming services/apple-music.png" alt="Apple Music"></a>
+        </div>
+
+        <div class="row">
+          <a href=""><img src="../assets/Images/streaming services/spotify.png" alt="Spotify"></a>
+        </div>
+
+        <div class="row">
+          <a href=""><img src="../assets/Images/streaming services/youtube.png" alt="Yotube"></a>
+        </div>
+        
+        <div class="row">
+          <a href=""><img src="../assets/Images/streaming services/soundcloud.png" alt="Soundcloud"></a>
+        </div>
 
     </div>
   
     <div class="col add-song">
-      <button>+</button>
+      <div class="row">
+          <p>${{ price }}</p>
+      </div>
+      <div class="row">
+        <button @mouseover="darkenImage" 
+              @mouseout="resetImage" >
+              Add to Cart
+        </button>
+      </div>
+      
     </div>
 
 
@@ -70,7 +98,12 @@ export default {
     featureArtistName: {
       type: Array,
       default: () => ['-']
+    },
+    price: {
+      type : Number,
+      default: 0
     }
+
   },
   data() {
     return {
@@ -128,7 +161,7 @@ export default {
 
 <style scoped>
 .img-max-height {
-  max-height: 200px;
+  max-height: 250px;
   width: 100%; /* Ensures the container takes full width */
   overflow: hidden; /* Ensures no overflow occurs */
   position: relative; /* Allows for positioning of the image within the container */
@@ -162,6 +195,7 @@ export default {
   display: flex;             /* Enables flexbox layout */
   justify-content: center;   /* Centers content horizontally */
   align-items: center;       /* Centers content vertically */
+  flex-direction: column;
 }
 
 .add-song button {
@@ -173,5 +207,34 @@ export default {
 .song-row{
   margin: 20px;
 }
+
+.track-info {
+  text-decoration: underline;
+}
+
+.song-link-container {
+    background-color: cornsilk;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    max-height: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.song-link-container .row {
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.song-link-container img {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
 
 </style>

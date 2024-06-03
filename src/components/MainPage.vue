@@ -2,24 +2,27 @@
   <div class="Main">
 
     <HeaderPage/>
+    <NavPage/>
 
-    <h3 class="PriceNotice">$2 for each song!!!</h3>
     <SongViewer :imgPath="require('@/assets/Shooting Stars/Shooting Stars Cover.png')" 
     :audioPath="require('@/assets/Shooting Stars/Shooting Stars OfficialSongEverth.Del..wav')"
     trackName = "Shooting Stars"
     mainArtistName="HeadHuncho"
+    price = 2.00
     />
 
     <SongViewer :imgPath="require('@/assets/Letter to the past/cover photo.jpg')" 
     :audioPath="require('@/assets/Letter to the past/Letter to the past w_hu.mp3')"
     trackName = "Letter to the Past"
     mainArtistName="Nu x HeadHuncho"
+    price = 2.00
     />
 
     <SongViewer :imgPath="require('@/assets/Money Reels/Money Reels Official Cover.png')" 
     :audioPath="require('@/assets/Money Reels/Money Reel4 redone3.mp3')"
     trackName = "Money Reels"
     mainArtistName="HeadHuncho x ItsMane"
+    price = 2.00
     />     
     
     <FooterPage/>    
@@ -31,22 +34,20 @@
 import SongViewer from './SongViewer.vue';
 import HeaderPage from './HeaderPage.vue';
 import FooterPage from './FooterPage.vue';
+import NavPage from './NavBar.vue'
 
 export default {
   name: 'MainPage',
   components: {
     SongViewer,
     HeaderPage,
-    FooterPage
+    FooterPage,
+    NavPage
   }
 }
 </script>
 
 <style scoped>
-
-.PriceNotice {
-  
-}
 
 .Main {
   background-color: black;
